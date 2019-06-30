@@ -84,11 +84,11 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 @guest
-                    <li class="nav-item ml-3 mr-4">
+                    <li class="nav-item ml-3">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN') }}</a>
                     </li>
                     @if (Route::has('register'))
-                        <li class="nav-item ml-3 mr-4">
+                        <li class="nav-item ml-1 mr-1">
                             <a class="nav-link" href="{{ route('register') }}">{{ __('REGISTER') }}</a>
                         </li>
                     @endif

@@ -44,8 +44,6 @@
                     @endforeach
                 </select>
             </div>
-
-
                 <input hidden type="text" name="Availability" Value="No">
             </div>
                 <div>

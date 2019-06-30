@@ -38,6 +38,8 @@ Route::resource('/Newsletter','newsletterController');
 /*Admin Dashboard Routes*/
 Route::resource('/AdminDashboard','AdminDashboardController');
 
+Route::get('/AdminDashboard','AdminDashboardController@AdminDashboard')->name('AdminDashboard');
+
 Route::get('/AdminViewContactUs', 'AdminDashboardController@ContactUs')->name('AdminViewContactUs');
 
 Route::get('/AdminViewNewsletter', 'AdminDashboardController@Newsletter')->name('AdminViewNewsletter');

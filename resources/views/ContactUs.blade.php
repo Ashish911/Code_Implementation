@@ -266,13 +266,13 @@
 
             <label class="label-input100" for="email">Enter your email </label>
             <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                <input id="email" class="input100" type="text" name="email" placeholder="">
+                <input id="email" class="input100" type="text" name="email" placeholder="E-Mail Address">
                 <span class="focus-input100"></span>
             </div>
 
             <label class="label-input100" for="phone">Enter phone number</label>
             <div class="wrap-input100">
-                <input id="phone" class="input100" type="text" name="phone" placeholder="">
+                <input id="phone" class="input100" type="text" name="phone" placeholder="Phone No">
                 <span class="focus-input100"></span>
             </div>
 

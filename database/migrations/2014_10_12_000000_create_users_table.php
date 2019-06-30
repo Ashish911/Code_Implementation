@@ -22,7 +22,6 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('UserName');
             $table->string('password');
-            $table->boolean('is_artist')->nullable();
             $table->enum('UserType',['User','Admin'])->default('User');
             $table->string('Profile_Description')->nullable();
             $table->string('Profile_Image')->nullable();

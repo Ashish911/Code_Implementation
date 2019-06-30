@@ -34,18 +34,35 @@
     <ul class="sidebar navbar-nav">
         <li class="nav-item active">
             <a class="nav-link" href="{{route('UserDashboard.index')}}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('UserProfile')}}">
+                <i class="fas fa-fw fa-id-card"></i>
                 <span>User Profile</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('ViewBookings')}}">
+                <i class="fas fa-fw fa-eye"></i>
                 <span>View Bookings</span></a>
         </li>
-        @yield('sidebar')
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('AddTattoos.index')}}">
+                <i class="fas fa-fw fa-paint-brush"></i>
+                <span>Tattoos</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href=href="{{ route('logout') }}" onclick="event.preventDefault();
+               document.getElementById('logout-form').submit();">
+                <i class="fas fa-fw fa-sign-out-alt"></i>
+                <span>{{ __('Logout') }}</span></a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+
+        </li>
 
     </ul>
 <div class="container-fluid">  @yield('content') </div>

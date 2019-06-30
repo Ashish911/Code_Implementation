@@ -35,6 +35,12 @@ class AdminDashboardController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    public function AdminDashboard()
+    {
+        $User = User::all();
+        return view('Admin/AdminDashboard', compact('User'));
+    }
+
     public  function AdminP()
     {
         $Users = User::latest()->get();

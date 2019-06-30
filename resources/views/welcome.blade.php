@@ -115,7 +115,7 @@
 <div class="Artist">
     <div class="container-fluid ">
         <div class="container">
-            <h2 class="h1-responsive font-weight-bold text-center pt-5 wow fadeIn">Book Artists</h2>
+            <h2 class="h1-responsive font-weight-bold text-center text-light pt-5 wow fadeIn">Book Artists</h2>
             <div class="row wow fadeInRight">
                 <!-- Block2 -->
                 @foreach($artist as $artists)
@@ -124,7 +124,7 @@
                             <img src="{{asset($artists->Artist_Image)}}" alt="{{$artists->FullName}}" class="img-fluid">
                         </div>
                         <div class="blog-column1">
-                            <h3 class="font-weight-bold text-center mb-3">{{$artists->FullName}}</h3>
+                            <h3 class="font-weight-bold text-center text-light mb-3">{{$artists->FullName}}</h3>
                             <p class="dark-grey-text text-center">${{$artists->Address}} </p>
                             @guest
                                 <button type="submit" class="btn btn-success btn-md" disabled>Buy Now</button>
@@ -143,9 +143,9 @@
 
 <div class="container-fluid Newsletter">
 <div class="container pt-5 pb-5 ">
-    <div class="text-center">
+    <div class="text-center text-light">
         <h2>Newsletter</h2>
-        <h5 class="text-body">Here you can subscribe to our newsletter. By doing so you will get news and updates from us.</h5>
+        <h5 class="text-light">Here you can subscribe to our newsletter. By doing so you will get news and updates from us.</h5>
     </div>
     <form method="post" action="{{route('Newsletter.store')}}">
         @csrf
@@ -166,7 +166,7 @@
 <div class="Tattoos">
     <div class="container-fluid ">
         <div class="container">
-            <h2 class="h1-responsive font-weight-bold text-center pt-5 wow fadeIn">Shop Tattoos</h2>
+            <h2 class="h1-responsive font-weight-bold text-center text-light pt-5 wow fadeIn">Shop Tattoos</h2>
             <div class="row wow fadeInRight">
             <!-- Block2 -->
             @foreach($Tattoo as $tattoo)
@@ -175,7 +175,7 @@
                             <img src="{{asset($tattoo->Tattoo_Image)}}" alt="{{$tattoo->Tattoo_Name}}" class="img-fluid">
                         </div>
                         <div class="blog-column1">
-                            <h3 class="font-weight-bold text-center mb-3">{{$tattoo->Tattoo_Name}}</h3>
+                            <h3 class="font-weight-bold text-center text-light mb-3">{{$tattoo->Tattoo_Name}}</h3>
                                 <p class="dark-grey-text text-center">${{$tattoo->Price}} </p>
                             @guest
                                 <button type="submit" class="btn btn-success btn-md" disabled>Buy Now</button>
