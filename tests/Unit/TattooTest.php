@@ -6,7 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class ProductTest extends TestCase
+class TattooTest extends TestCase
 {
     /**
      * A basic unit test example.
@@ -18,22 +18,21 @@ class ProductTest extends TestCase
         $this->assertTrue(true);
     }
 
-    
-    public function Createproduct()
+    public function CreateTattoo()
     {
         $data = [
-            'Product_Name' => 'Ink Machine',
-            'Product_Detail' => 'Mostlyink',
+            'Tattoo_Name' => 'Mind Blown',
+            'Tattoo_Detail' => 'mindblown',
             'Price' => '30',
             'Quantity' => '30',
-            'Product_Image' => 'Uploads/Products/15619090871131.jpg',
-            'Category_id' => '1'
+            'Tattoo_Image' => 'Uploads/Tattoos/1561909212t3.jpg',
+            'User_Id' => '1'
         ];
 
-        $response = $this->json('POST','/App/Product',$data);
+        $response = $this->json('POST','/App/Tattoo',$data);
             $response->assertStatus(200);
             $response->assertJson(['status' => true]);
-            $response->assertJson(['message' => "Product Created!!"]);
+            $response->assertJson(['message' => "Tattoo Created!!"]);
             $response->assertJson(['data' => $data]);
     }
 }

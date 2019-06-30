@@ -2,12 +2,11 @@
 
 namespace Tests\Unit;
 
-use App;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class Logintest extends TestCase
+class LoginTest extends TestCase
 {
     /**
      * A basic unit test example.

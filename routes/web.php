@@ -81,6 +81,10 @@ Route::get('/UserProfileEdit', 'UserDashboardController@edit')->name('UserProfil
 
 Route::get('/UserUploadPhoto', 'UserDashboardController@create')->name('UserUploadPhoto');
 
+Route::get('/UserViewTattooTransaction', 'UserDashboardController@ViewTattooTransaction')->name('TattooTransaction');
+
+Route::get('/UserViewProductTransaction', 'UserDashboardController@ViewProductTransaction')->name('ProductTransaction');
+
 Route::resource('/AddTattoos','TattooController');
 
 Route::resource('/Product','ProductsController');

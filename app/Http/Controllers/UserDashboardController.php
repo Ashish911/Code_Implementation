@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Booking;
+use App\buy;
+use App\buy_products;
+use App\products;
+use App\Tattoo;
 use App\User;
 use File;
 use Illuminate\Http\Request;
@@ -36,6 +40,20 @@ class UserDashboardController extends Controller
         $User = User::all();
         $Booking = Booking::all();
         return view('User/ViewBookings', compact('Booking','User'));
+    }
+
+    public function ViewTattooTransaction()
+    {
+        $User = User::all();
+        $buy = buy::all();
+        return view('User/ViewTattooTransaction', compact('buy','User'));
+    }
+
+    public function ViewProductTransaction()
+    {
+        $User = User::all();
+        $buyP = buy_products::all();
+        return view('User/ViewProductTransaction', compact('buyP','User'));
     }
 
     public function create()

@@ -1,8 +1,8 @@
-@extends('layouts.adminsidebar')
+@extends('layouts.usersidebar')
 
 @section('content')
 
-    <h2 class="text-center py-2">Users</h2>
+    <h2 class="text-center py-2">Product Transaction</h2>
     <div class="container">
         <div class="row">
             <div class="col-md-12 table-responsive">
@@ -17,13 +17,13 @@
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Total</th>
-                        <th>Buyer Name</th>
 
                     </tr>
                     </thead>
                     <tbody>
-                    @if(count($buyp)>0)
-                        @foreach($buyp as $buys)
+                    @if(count($buyP)>0)
+                        @foreach($buyP as $buys)
+                            @if($buys->UserId == Auth::user()->id)
                                 <tr>
                                     <?php $Product = App\products::findorfail($buys->ProductId) ?>
                                     <td>{{$Product->Product_Name}}</td>
@@ -36,9 +36,8 @@
                                     <td>{{$buys->Price}}</td>
                                     <td>{{$buys->Quantity}}</td>
                                     <td>{{$buys->Total}}</td>
-                                    <?php $User = App\User::findorfail($buys->UserId) ?>
-                                    <td>{{$User->FullName}}</td>
                                 </tr>
+                            @endif
                         @endforeach
                     @else
                         <p>There are No Transaction to show</p>

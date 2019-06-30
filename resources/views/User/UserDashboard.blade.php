@@ -10,7 +10,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Bookings</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{App\User::where(['UserType' => 'User'])->count()}}</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{App\Booking::where(['UserId' => Auth::user()->id])->count()}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fa fa-user fa-3x text-gray-300"></i>

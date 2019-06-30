@@ -49,9 +49,24 @@
                 <span>View Bookings</span></a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="{{route('TattooTransaction')}}">
+                <i class="fas fa-fw fa-eye"></i>
+                <span>View Tattoo Transaction</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('ProductTransaction')}}">
+                <i class="fas fa-fw fa-eye"></i>
+                <span>View Product Transaction</span></a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="{{route('AddTattoos.index')}}">
                 <i class="fas fa-fw fa-paint-brush"></i>
                 <span>Tattoos</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('welcome')}}">
+                <i class="fas fa-fw fa-home"></i>
+                <span>Back to home</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href=href="{{ route('logout') }}" onclick="event.preventDefault();

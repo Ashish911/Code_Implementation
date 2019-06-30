@@ -14,6 +14,7 @@
                         <th>Artist Address</th>
                         <th>Artist Email</th>
                         <th>Artist Image</th>
+                        <th>Day</th>
 
                     </tr>
                     </thead>
@@ -29,11 +30,16 @@
                                 <td>
                                     <img src="{{asset($artist->Artist_Image)}}" alt="{{$artist->FullName}}" height="100">
                                 </td>
+                                <td>{{$Bookings->Day}}</td>
                             </tr>
                             @endif
                         @endforeach
                     @else
                         <p>There are No bookings to show</p>
     @endif
-
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 @endsection
