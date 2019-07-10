@@ -21,7 +21,7 @@ class WelcomeController extends Controller
     public function index()
     {
         $Review = Reviews::all()->take(3);
-        $Tattoo = Tattoo::all()->take(3);
+        $Tattoo = Tattoo::all()->take(4);
         $artist = artist::all()->take(3);
         return view('welcome',compact('Review','Tattoo','artist'));
     }

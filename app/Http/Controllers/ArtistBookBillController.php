@@ -2,47 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Booking;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class LoginController extends Controller
+class ArtistBookBillController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public  function login(Request $request){
-        $this->validate($request, User::$Login_validation_rules);
-        if (Auth::attempt([
-            'email' => $request->email,
-            'password' => $request->password
-        ]))
-
-        {
-            $user = User::where('email', $request->email)->first();
-            if($user->is_active())
-            {
-            if ($user->is_admin())
-            {
-                return redirect()->route('home');
-            }
-                return redirect()->route('welcome');
-            }
-            else
-            {
-                dd("You are suspended for improper activity");
-            }
-        }
-
-        return redirect()->back()->withErrors(['Login Failed','Password is invalid']);
-    }
-
     public function index()
     {
-        return view('auth/Login');
+        //
     }
 
     /**
@@ -85,7 +57,8 @@ class LoginController extends Controller
      */
     public function edit($id)
     {
-        //
+        $Booking = Booking::findorfail($id);
+        return view('User/ArtistBookBillGenerate', compact('Booking'));
     }
 
     /**

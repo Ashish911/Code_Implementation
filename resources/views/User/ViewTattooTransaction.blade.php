@@ -17,6 +17,7 @@
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Total</th>
+                        <th>Generate Bill</th>
 
                     </tr>
                     </thead>
@@ -36,6 +37,9 @@
                                 <td>{{$buys->Price}}</td>
                                 <td>{{$buys->Quantity}}</td>
                                 <td>{{$buys->Total}}</td>
+                                <td>
+                                    <a href="{{route('TattooBill.edit',['id'=>$buys->id])}}" class="btn btn-outline-primary">Generate</a>
+                                </td>
                             </tr>
                             @endif
                         @endforeach

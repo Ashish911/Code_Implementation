@@ -17,6 +17,7 @@
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Total</th>
+                        <th>Generate Bill</th>
 
                     </tr>
                     </thead>
@@ -28,7 +29,7 @@
                                     <?php $Product = App\products::findorfail($buys->ProductId) ?>
                                     <td>{{$Product->Product_Name}}</td>
                                     <td>
-                                        <img src="{{asset($Product->Product_Image)}}" alt="{{$Tattoo->Product_Name}}" height="100">
+                                        <img src="{{asset($Product->Product_Image)}}" alt="{{$Product->Product_Name}}" height="100">
                                     </td>
                                     <td>{{$buys->Location}}</td>
                                     <td>{{$buys->Contact}}</td>
@@ -36,6 +37,9 @@
                                     <td>{{$buys->Price}}</td>
                                     <td>{{$buys->Quantity}}</td>
                                     <td>{{$buys->Total}}</td>
+                                        <td>
+                                            <a href="{{route('ProductBill.edit',['id'=>$buys->id])}}" class="btn btn-outline-primary">Generate</a>
+                                        </td>
                                 </tr>
                             @endif
                         @endforeach

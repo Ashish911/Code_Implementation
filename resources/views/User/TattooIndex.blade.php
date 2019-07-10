@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-12 table-responsive">
                 <div>
-                    <a class="btn btn-success mb-2" href="{{route('AddTattoos.create')}}" >Create Tattoo</a>
+                    <a class="btn btn-success mb-2" href="{{route('AddTattoos.create')}}" >Add Tattoo</a>
                 </div>
                 <table class="table table-bordered table-striped table-hover">
                     <thead>

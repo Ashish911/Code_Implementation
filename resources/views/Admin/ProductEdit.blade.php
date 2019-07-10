@@ -67,7 +67,7 @@
                         </div>
 
                         <!-- Send button -->
-                        <input class="btn btn-submit btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit" value="Add Artist">
+                        <input class="btn btn-submit btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit" value="Edit Product">
 
                     </form>
                     <!-- Form -->

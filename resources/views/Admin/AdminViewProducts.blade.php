@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h2 class="text-center py-2">Artists</h2>
+    <h2 class="text-center py-2">Products</h2>
     <div class="container">
         <div class="row">
             <div class="col-md-12 table-responsive">

@@ -114,3 +114,9 @@ Route::resource('/TattooReview','TattooreviewsController');
 Route::resource('/ProductReview','ProductreviewsController');
 
 Route::resource('/ProductBuy','BuyProductsController');
+
+Route::resource('/TattooBill','TattooBillController');
+
+Route::resource('/ArtistBookBill','ArtistBookBillController');
+
+Route::resource('/ProductBill','ProductBillController');

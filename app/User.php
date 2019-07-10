@@ -72,6 +72,10 @@ class User extends Authenticatable
         return $this->hasMany('App\buy');
     }
 
+    public static $Login_validation_rules = [
+        'email' => 'required|email|exists:users',
+        'password' => 'required'
+    ];
 
 }
 

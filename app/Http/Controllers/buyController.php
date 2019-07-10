@@ -45,7 +45,7 @@ class buyController extends Controller
         $Buy->Quantity = $request->quantity;
         $Buy->Price = $request->Price;
         $pri = $request->Price;
-        $qty = $request->Quantity;
+        $qty = $request->quantity;
         $total = $pri * $qty;
         $Buy->Total = $total;
         $Buy->TattooId = $request->id;
@@ -55,7 +55,7 @@ class buyController extends Controller
             Tattoo::where('id', $Buy->TattooId)->decrement('Quantity', $request->quantity);
         }
         $Buy->save();
-        return redirect()->back();
+        return redirect()->route('Tattoos');
     }
 
     /**

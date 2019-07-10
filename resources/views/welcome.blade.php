@@ -5,19 +5,6 @@
 @section('content')
 
     <style>
-        
-        .AboutUs{
-            background-color: #0d0f11;
-        }
-
-        .Artist{
-            background-color: #131619;
-        }
-
-        .Tattoos{
-            background-color: #0d0f11;
-        }
-
         .Img-welcome{
             height: 800px;
             background: url('assets/images/Tattoo1.jpg') ;
@@ -28,21 +15,6 @@
 
         .texts{
             margin-top: 25%;
-        }
-
-        .innovate{
-            background-color:#18181E  ;
-            color: #ffe0bd;
-            margin-left: 49%;
-            transition: color 0.5s;
-            border-radius: 10px;
-            text-decoration: none;
-        }
-
-        .innovate:hover{
-            background-color: white;
-            color: black;
-            text-decoration: none;
         }
 
         #ArtistBook{
@@ -73,14 +45,15 @@
 </div>
     
 <div class="container-fluid py-3 AboutUs">
-    <div class="row font-weight-bold text-center text-light">
+    <div class="row font-weight-bold text-center text-body">
         <div class="col-md-12">
             <h1>{{__('About Us')}}</h1>
         </div>
     </div>
     <div class="row mt-5">
         <div class="col-md-5 offset-1">
-            <p class="text-light">Our mission is what drives us to do everything possible to expand human talent. We do that by giving fascinating classes to our students and sharpening their talent.<br> He have been doing this since 2001. Its already been 18 years and we are countinuing our legacy and creating great talents....</p>
+            <p class="text-body">Royal Tattoo Service, is a newly refurbished and sterile service based in Nepal. We pride ourselves on our service to the client; not only are our rates very reasonable, we have many artist, products and tattoos that you can buy. At Royal Tattoo Service , we are individuals working together, pursuing a common goal to create a platform for all artist and sellers to sell their tattoos and products. In the tattooing business since 2012, the Royal Tattoo Service was set up in Nepal.
+                At Black Poison Tattoo Studio, you will always find a friendly, courteous, professional staff dedicated to the art of Tattooing & Body Piercing. We care about the art we create.</p>
         </div>
         <div class="col-md-4 offset-1">
             <img src="{{asset('assets/images/Tattoo0.jpg')}}" alt="AboutUs" class="img-fluid ">
@@ -115,23 +88,33 @@
 <div class="Artist">
     <div class="container-fluid ">
         <div class="container">
-            <h2 class="h1-responsive font-weight-bold text-center text-light pt-5 wow fadeIn">Book Artists</h2>
+            <h2 class="h1-responsive font-weight-bold text-center text-body pt-5 wow fadeIn">Book Artists</h2>
             <div class="row wow fadeInRight">
                 <!-- Block2 -->
                 @foreach($artist as $artists)
-                    <div class="col-lg-4 col-md-4 ezpz">
-                        <div class="Thumbnail mb-3">
-                            <img src="{{asset($artists->Artist_Image)}}" alt="{{$artists->FullName}}" class="img-fluid">
-                        </div>
-                        <div class="blog-column1">
-                            <h3 class="font-weight-bold text-center text-light mb-3">{{$artists->FullName}}</h3>
-                            <p class="dark-grey-text text-center">${{$artists->Address}} </p>
-                            @guest
-                                <button type="submit" class="btn btn-success btn-md" disabled>Buy Now</button>
-                                <p>(Note: You Need to Login to be able to buy tattoo)</p>
-                            @else
-                                <a class="btn btn-success" href="{{route('Buy.edit',['id'=>$artists->id])}}">Buy Now</a>
-                            @endguest
+                    <div class="col-lg-4 col-md-4 pt-3 pb-3 mb-4 mt-3">
+                        <div class="card">
+
+                            <!-- Card image -->
+                            <img src="{{asset($artists->Artist_Image)}}" alt="{{$artists->FullName}}" height="300px">
+
+                            <!-- Card content -->
+                            <div class="card-body">
+
+                                <!-- Title -->
+                                <h4 class="card-title"><strong>{{$artists->FullName}}</strong></h4>
+                                <!-- Text -->
+                                <p class="card-text text-body">{{$artists->Address}}</p>
+
+                                <!-- Button -->
+                                @guest
+                                    <a href="{{route('Login')}}" class="btn btn-success">Login Now</a>
+                                @else
+                                    <a class="btn btn-outline-success" href="{{route('Booking.edit',['id'=>$artists->id])}}"> Book Now</a>
+                                @endguest
+
+                            </div>
+
                         </div>
                     </div>
                 @endforeach
@@ -154,7 +137,7 @@
                 <input type="email" class="form-control" name="Email" placeholder="Enter your Email" required>
             </div>
             <div class="col-auto">
-                <input type="submit" class="btn btn-rounded bg-success text-light" title="subscribe" name="subscribe" value="subscribe"/>
+                <input type="submit" class="btn btn-rounded btn-success text-light" title="subscribe" name="subscribe" value="subscribe"/>
             </div>
         </div>
     </form>
@@ -166,23 +149,33 @@
 <div class="Tattoos">
     <div class="container-fluid ">
         <div class="container">
-            <h2 class="h1-responsive font-weight-bold text-center text-light pt-5 wow fadeIn">Shop Tattoos</h2>
+            <h2 class="h1-responsive font-weight-bold text-center text-body pt-5 wow fadeIn">Shop Tattoos</h2>
             <div class="row wow fadeInRight">
             <!-- Block2 -->
             @foreach($Tattoo as $tattoo)
-                    <div class="col-lg-4 col-md-4 ezpz">
-                        <div class="Thumbnail mb-3">
-                            <img src="{{asset($tattoo->Tattoo_Image)}}" alt="{{$tattoo->Tattoo_Name}}" class="img-fluid">
-                        </div>
-                        <div class="blog-column1">
-                            <h3 class="font-weight-bold text-center text-light mb-3">{{$tattoo->Tattoo_Name}}</h3>
-                                <p class="dark-grey-text text-center">${{$tattoo->Price}} </p>
-                            @guest
-                                <button type="submit" class="btn btn-success btn-md" disabled>Buy Now</button>
-                                <p>(Note: You Need to Login to be able to buy tattoo)</p>
-                            @else
-                                <a class="btn btn-success" href="{{route('Buy.edit',['id'=>$tattoo->id])}}">Buy Now</a>
-                            @endguest
+                    <div class="col-lg-3 col-md-3 pt-3 mt-3 pb-3 mb-4 ">
+                        <div class="card">
+
+                            <!-- Card image -->
+                            <img src="{{asset($tattoo->Tattoo_Image)}}" alt="{{$tattoo->Tattoo_Name}}" height="300px">
+
+                            <!-- Card content -->
+                            <div class="card-body">
+
+                                <!-- Title -->
+                                <h4 class="card-title"><strong>{{$tattoo->Tattoo_Name}}</strong></h4>
+                                <!-- Text -->
+                                <p class="card-text text-body">${{$tattoo->Price}}</p>
+
+                                <!-- Button -->
+                                @guest
+                                    <a href="{{route('Login')}}" class="btn btn-success">Login Now</a>
+                                @else
+                                    <a class="btn btn-outline-success" href="{{route('Buy.edit',['id'=>$tattoo->id])}}">Buy Now</a>
+                                @endguest
+
+                            </div>
+
                         </div>
                     </div>
              @endforeach

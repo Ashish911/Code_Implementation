@@ -15,7 +15,10 @@
     <script src="https://kit.fontawesome.com/5b14d241b3.js"></script>
 
 </head>
-<body>
+<body onload="myFunction()">
+
+<div id="loading"></div>
+
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
     <a class="navbar-brand mr-1" href="{{route('UserDashboard.index')}}">Royal Tattoo Service</a>
@@ -83,6 +86,14 @@
 <div class="container-fluid">  @yield('content') </div>
 
 </div>
+
+<script>
+    var preloader = document.getElementById("loading");
+
+    function myFunction(){
+        preloader.style.display = 'none';
+    };
+</script>
 
 <!-- Bootstrap core JavaScript-->
 <script src="{{asset('js/jquery.min.js')}}"></script>
