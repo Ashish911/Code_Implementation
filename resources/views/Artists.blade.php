@@ -1,6 +1,28 @@
 @extends('layouts.Pagelayout')
 
+<style>
+    .banner {
+        height: 380px;
+        background: url('assets/images/cool-background1.png') center no-repeat ;
+        padding-top: 5%;
+
+    }
+
+    .gra-tat{
+        font-size: 50px;
+        background: -webkit-linear-gradient(#87AEDC , #FFFFFF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+</style>
+
 @section('content')
+<div class="banner">
+    <div class="text-center mt-5 pt-5">
+        <h2 class="font-weight-bold gra-tat">Book Artists</h2>
+    </div>
+</div>
 <div class="container-fluid bg-light py-5">
 <div class="container">
     <div class="row">

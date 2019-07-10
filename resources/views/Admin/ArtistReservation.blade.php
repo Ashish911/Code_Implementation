@@ -51,7 +51,7 @@
                             <input type="email" class="form-control" name="email" placeholder="E-mail" required value="{{$artist->email}}" readonly>
                         </div>
                         <div class="row">
-                            <div class="form-group col-6 offset-3">
+                            <div class="form-group col-6">
                                 <label>Day</label>
                                 <select name="Days" class="form-control" required>
                                     <option value="Sunday">Sunday</option>
@@ -62,7 +62,12 @@
                                     <option value="Friday">Friday</option>
                                 </select>
                             </div>
+                            <div class="form-group col-6">
+                                <label>Max Bookings</label>
+                                <input type="number" class="form-control" name="Max">
+                            </div>
                         </div>
+
                         <!-- Send button -->
                         <input class="btn btn-submit btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit" value="Add Reservation">
 

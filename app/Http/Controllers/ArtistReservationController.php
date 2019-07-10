@@ -39,6 +39,7 @@ class ArtistReservationController extends Controller
         $Reservation = new ArtistReservation();
         $Reservation->Day = $request->Days;
         $Reservation->ArtistId = $request->id;
+        $Reservation->Max_Bookings = $request->Max;
         $Reservation->save();
         return redirect()->route('AdminViewArtists');
     }

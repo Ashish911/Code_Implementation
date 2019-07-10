@@ -59,12 +59,22 @@
                                 <select name="Days" class="form-control" required>
                                     @foreach ($Reservation as $item)
                                         @if($artist->id == $item->ArtistId)
-                                            @if($item->Availability == 'Yes')
+                                            @if($item->Max_Bookings == '0')
+                                                <option>No Booking Available</option>
+                                            @else
                                                 <option value="{{$item->Day}}">{{$item->Day}}</option>
                                             @endif
                                         @endif
                                     @endforeach
                                 </select>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="form-group col-6">
+                                <label>Quantity</label>
+                            </div>
+                            <div class="col-6">
+                                <input type="text" name="quantity" class="form-control" readonly value="1">
                             </div>
                         </div>
                         <div class="row">

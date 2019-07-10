@@ -65,5 +65,47 @@
             </div>
         </div>
     </div>
-    <p class="text-center my-5 py-5"> Welcome to the user dashboard <b class="text-danger">{{ Auth::user()->UserName }}</b></p>
+    <h2 class="text-center py-2">My Tattoos Sold</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 table-responsive">
+                <table class="table table-bordered table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>Tattoo Name</th>
+                        <th>Tattoo Image</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Buyer Name</th>
+                        <th>Buyer Email</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @if(count($Buy)>0)
+                        @foreach($Buy as $item)
+                            <?php $Tattoo = App\Tattoo::findorfail($item->TattooId) ?>
+                            @if($item->UserId !== Auth::user()->id && $Tattoo->User_Id == Auth::user()->id )
+                                <tr>
+                                    <?php $Tattoo = App\Tattoo::findorfail($item->TattooId) ?>
+                                    <td>{{$Tattoo->Tattoo_Name}}</td>
+                                    <td>
+                                        <img src="{{asset($Tattoo->Tattoo_Image)}}" alt="{{$Tattoo->Tattoo_Name}}" height="100">
+                                    </td>
+                                    <td>{{$Tattoo->Price}}</td>
+                                    <td>{{$item->Quantity}}</td>
+                                    <?php $User = App\User::findorfail($item->UserId) ?>
+                                    <td>{{$User->FullName}}</td>
+                                    <td>{{$User->email}}</td>
+                                </tr>
+                                @else
+                            @endif
+                        @endforeach
+                        @else
+                    @endif
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 @endsection

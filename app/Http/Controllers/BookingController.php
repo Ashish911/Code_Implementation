@@ -43,9 +43,9 @@ class BookingController extends Controller
         $Book->Day = $request->Days;
         $Book->ArtistId = $request->id;
         $Book->UserId = $request->user()->id;
-        $Reservation = ArtistReservation::where('Day', $Book->Day)->first()->Availability;
-        if ($Reservation == $request->Days){
-            ArtistReservation::where('Day', $Book->Day)->Input('Availability', $request->Availability);
+        $Reservation = ArtistReservation::where('Day', $Book->Day)->first()->Max_Bookings;
+        if ($Reservation >= $request->quantity){
+            ArtistReservation::where('Day', $Book->Day)->decrement('Max_Bookings', $request->quantity);
         }
         $Book->save();
         return redirect()->route('Artists');

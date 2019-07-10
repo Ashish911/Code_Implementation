@@ -2,20 +2,27 @@
 
 <style>
     .banner {
-        height: 200px;
-        background-color: #0d0f11;
+        height: 380px;
+        background: url('assets/images/cool-background.png') center center no-repeat ;
         padding-top: 5%;
+    }
+
+    .gra-tat{
+        font-size: 50px;
+        background: -webkit-linear-gradient(#ffffff , #000000);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
 </style>
 
 @section('content')
 <div class="banner">
-    <div class="text-center">
-        <p class="blockquote">Buy Tattoo</p>
+    <div class="text-center mt-5 pt-5">
+        <h2 class="font-weight-bold gra-tat">Shop Tattoos</h2>
     </div>
 </div>
-<div class="container-fluid py-5">
+<div class="container-fluid bg-light py-5">
 <div class="container">
     <div class="row">
         @foreach($Tattoo as $tattoo)
@@ -34,16 +41,16 @@
                     <h4 class="card-title"><strong>{{$tattoo->Tattoo_Name}}</strong></h4>
                     <!-- Text -->
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-9">
                             <p class="card-text text-body">{{$tattoo->Tattoo_Detail}}</p>
                         </div>
-                        <div class="col-6">
+                        <div class="col-3">
                             <p class="card-text text-body text-right">${{$tattoo->Price}}</p>
                         </div>
                     </div>
 
                     <!-- Button -->
-                    <a class="btn btn-outline-info" href="{{route('Buy.edit',['id'=>$tattoo->id])}}"> Buy Now</a>
+                    <a class="btn btn-outline-info" href="{{route('Buy.edit',['id'=>$tattoo->id])}}"><i class="fa fa-shopping-cart"></i> Buy Now</a>
 
                 </div>
 

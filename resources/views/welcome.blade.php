@@ -44,7 +44,7 @@
     </div>
 </div>
     
-<div class="container-fluid py-3 AboutUs">
+<div class="container-fluid py-3 AboutUs bg-light">
     <div class="row font-weight-bold text-center text-body">
         <div class="col-md-12">
             <h1>{{__('About Us')}}</h1>
@@ -89,6 +89,7 @@
     <div class="container-fluid ">
         <div class="container">
             <h2 class="h1-responsive font-weight-bold text-center text-body pt-5 wow fadeIn">Book Artists</h2>
+            <a href="{{route('Artists')}}" class="btn btn-outline-success">View All</a>
             <div class="row wow fadeInRight">
                 <!-- Block2 -->
                 @foreach($artist as $artists)
@@ -147,12 +148,15 @@
 
 
 <div class="Tattoos">
-    <div class="container-fluid ">
+    <div class="container-fluid bg-light">
         <div class="container">
             <h2 class="h1-responsive font-weight-bold text-center text-body pt-5 wow fadeIn">Shop Tattoos</h2>
+            <a href="{{route('Tattoos')}}" class="btn btn-outline-success">View All</a>
             <div class="row wow fadeInRight">
             <!-- Block2 -->
             @foreach($Tattoo as $tattoo)
+                    @if($tattoo->Quantity == '0')
+                    @else
                     <div class="col-lg-3 col-md-3 pt-3 mt-3 pb-3 mb-4 ">
                         <div class="card">
 
@@ -178,6 +182,7 @@
 
                         </div>
                     </div>
+                    @endif
              @endforeach
             </div>
         </div>

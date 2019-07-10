@@ -14,7 +14,7 @@
                         <th>Email</th>
                         <th>Phone No</th>
                         <th>Day</th>
-                        <th>Availability</th>
+                        <th>Max Bookings</th>
                         <th>Delete</th>
 
                     </tr>
@@ -29,7 +29,7 @@
                                 <td>{{$artists->email}}</td>
                                 <td>{{$artists->PhoneNo}}</td>
                                 <td>{{$Reservation->Day}}</td>
-                                <td>{{$Reservation->Availability}}</td>
+                                <td>{{$Reservation->Max_Bookings}}</td>
                                 <td>
                                     <form action="{{ route('ArtistReservation.destroy',['id'=>$Reservation->id]) }}" method="POST">
                                         {{ csrf_field() }}

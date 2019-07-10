@@ -20,7 +20,8 @@ class UserDashboardController extends Controller
     public function index()
     {
         $Users = User::latest()->get();
-        return view('User/UserDashboard',compact('Users'));
+        $Buy = buy::all();
+        return view('User/UserDashboard',compact('Users','Buy'));
     }
 
     /**

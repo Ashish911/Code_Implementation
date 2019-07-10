@@ -16,7 +16,7 @@ class CreateArtistReservationsTable extends Migration
         Schema::create('artist_reservations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('Day');
-            $table->enum('Availability',['Yes','No'])->default('Yes');
+            $table->integer('Max_Bookings');
             $table->bigInteger('ArtistId')->unsigned();
             $table->foreign('ArtistId')->references('id')->on('artists')->onDelete('cascade');
         });
