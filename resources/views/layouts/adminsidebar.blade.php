@@ -34,11 +34,13 @@
     <ul class="sidebar navbar-nav">
         <li class="nav-item active">
             <a class="nav-link" href="{{route('AdminDashboard')}}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('AdminProfile')}}">
+                <i class="fas fa-fw fa-id-card"></i>
                 <span>Admin Profile</span></a>
         </li>
         <li class="nav-item">
@@ -51,6 +53,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('AdminViewTattoos')}}">
+                <i class="fas fa-fw fa-paint-brush"></i>
                 <span>View Tattoos</span></a>
         </li>
         <li class="nav-item">
@@ -67,14 +70,17 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('AdminViewBookings')}}">
+                <i class="fas fa-fw fa-eye"></i>
                 <span>View Bookings</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('AdminViewTattooTransaction')}}">
+                <i class="fas fa-fw fa-eye"></i>
                 <span>View Tattoo Transactions</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('AdminViewProductTransaction')}}">
+                <i class="fas fa-fw fa-eye"></i>
                 <span>View Product Transactions</span></a>
         </li>
         <li class="nav-item">
@@ -87,12 +93,13 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('AdminViewContactUs')}}">
+                <i class="fas fa-fw fa-paint-brush"></i>
                 <span>View ContactUsInfo </span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href=href="{{ route('logout') }}" onclick="event.preventDefault();
                document.getElementById('logout-form').submit();">
-                <i class="fas fa-fw fa-chart-area"></i>
+                <i class="fas fa-fw fa-sign-out-alt"></i>
                 <span>{{ __('Logout') }}</span></a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf

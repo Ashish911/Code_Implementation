@@ -3,11 +3,16 @@
 namespace Tests\Unit;
 
 use Tests\TestCase;
+use App\buy;
+use App\User;
+use App\Tattoo;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Session;
 
 class BuyTest extends TestCase
 {
+    use RefreshDatabase;
     /**
      * A basic unit test example.
      *
@@ -18,22 +23,25 @@ class BuyTest extends TestCase
         $this->assertTrue(true);
     }
 
-    public function buytest()
+    /** @test */
+    public function buyTattootest()
     {
-        $data = [
-            'PaymentMethod' => 'Esewa',
-            'Price' => '30',
-            'Quantity' => '5',
-            'Total' => '150',
-            'Location' => 'Bafal',
-            'Contact' => '98464864',
-            'TattooId' => '1',
-            'UserId' => '1'
-        ];
-        $response = $this->json('POST','/App/buys',$data);
-            $response->assertStatus(200);
-            $response->assertJson(['status' => true]);
-            $response->assertJson(['message' => "Successfull!!"]);
-            $response->assertJson(['data' => $data]);
+        Session::start();
+        $this->withoutExceptionHandling();
+        $this->actingAs(factory(User::class)->create());
+        $user=User::first();
+        factory(Tattoo::class)->create();
+        $tattoo = Tattoo::first(['User_Id'->$user->id]);
+        $response = $this->post('/Payment',[
+            'PaymentMethod'=>'Esewa',
+             'Contact'=>'asdasd',
+             'Quantity'=>'1',
+             'Price'=>'2000',
+             'Total'=>'2000',
+             'Location'=>'asdasd',             
+             'TattooId'=>$Tattoo->id,
+             'UserId'=>$user->id,
+        ]);
+        $this->assertCount(1,buy::all());
     }
 }

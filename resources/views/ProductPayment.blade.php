@@ -1,5 +1,6 @@
 @extends('layouts.Pagelayout')
 
+
 @section('content')
     <style>
         .card{

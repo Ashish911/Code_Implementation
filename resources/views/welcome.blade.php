@@ -93,7 +93,7 @@
             <div class="row wow fadeInRight">
                 <!-- Block2 -->
                 @foreach($artist as $artists)
-                    <div class="col-lg-4 col-md-4 pt-3 pb-3 mb-4 mt-3">
+                    <div class="col-lg-3 col-md-4 pt-3 pb-3 mb-4 mt-3">
                         <div class="card">
 
                             <!-- Card image -->

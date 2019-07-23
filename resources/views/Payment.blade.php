@@ -4,7 +4,7 @@
 
     <style>
         .card{
-            width: 600px;
+            width: 400px;
         }
 
         .btn-submit{
@@ -22,41 +22,40 @@
 
     <div class="container-fluid">
         <div class="container">
-
-            <div class="card offset-3 mt-5">
+            <div class="card mt-5">
 
                 <div class="card-body px-lg-5 pt-0">
                     <form class="text-center " method="post" name="edit" action="{{route('Buy.store',['id'=>$tattoo->id])}}">
                         @csrf
                         <div class="row mt-5">
-                            <div class="col-6">
+                            <div class="col-12">
                                 <label>Tattoo Name</label>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12">
                                 <input readonly name="Price" id="Price" value="{{$tattoo->Tattoo_Name}}" class="form-control">
                             </div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-6">
+                            <div class="col-12">
                                 <label>Tattoo Detail</label>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12">
                                 <input readonly name="Price" id="Price" value="{{$tattoo->Tattoo_Detail}}" class="form-control">
                             </div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-6">
+                            <div class="col-12">
                                 <label>Price</label>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12">
                                 <input readonly name="Price" id="Price" value="{{$tattoo->Price}}" class="form-control">
                             </div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-6">
+                            <div class="col-12">
                                 <label>Payment Method</label>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12">
                                 <select class="form-control" required="required" name="Payment">
                                     <option value=""> Select payment method </option>
                                     <option value="Esewa"> Esewa </option>
@@ -65,26 +64,26 @@
                             </div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-6">
+                            <div class="col-12">
                                 <label>Location</label>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12">
                                 <input class="form-control" type="text" name="Location" required>
                             </div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-6">
+                            <div class="col-12">
                                 <label>Quantity</label>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12">
                                 <input class="form-control" name="quantity" id="Quantity" onKeyUp="multiply()" type="number" min="1" max="{{$tattoo->Quantity}}" required>
                             </div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-6">
+                            <div class="col-12">
                                 <label>Contact Info</label>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12">
                                 <input class="form-control" name="Contact" type="text" required>
                             </div>
                         </div>

@@ -1,5 +1,7 @@
 @extends('layouts.Pagelayout')
 
+@section('activeC','active')
+
 @section('content')
 
 <style>

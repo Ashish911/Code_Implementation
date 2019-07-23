@@ -18,15 +18,14 @@ class LoginTest extends TestCase
         $this->assertTrue(true);
     }
 
+    /** @test */
     public function logintest()
     {
-        $user = factory(App\User::class)->create(['email'=>'john@example.com', 'password' => bcrypt('testpass123')]);
-
-        $this->visit(route('login'));
-        $this->type($user->email, 'email');
-        $this->type($user->password, 'password');
+        $this->get('/login');
+        $this->type('asd@asd.com', 'email');
+        $this->type('12345678', 'password');
         $this->press('Login');
         $this->assetTrue(Auth::check());
-        $this->seePageIs(route('userdashboard'));
+        $this->seePageIs(route('user.userdashboard'));
     }
 }

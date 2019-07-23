@@ -45,10 +45,10 @@
                         </td>
                     </tr>
                      @else
-                        <p>There are No Users to show</p>
                 @endif
                 @endforeach
                 @else
+                    <p>There are No Users to show</p>
                 @endif
                 </tbody>
             </table>

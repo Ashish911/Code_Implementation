@@ -1,5 +1,7 @@
 @extends('layouts.Pagelayout')
 
+@section('activeP','active')
+
 <style>
     .banner {
         height: 380px;
@@ -29,7 +31,7 @@
         @foreach($Product as $product)
             @if($product->Quantity == '0')
             @else
-            <div class="col-lg-4 col-md-4 pb-3 mb-4 ">
+            <div class="col-lg-3 col-md-4 pb-3 mb-4 ">
                 <div class="card">
 
                     <!-- Card image -->

@@ -36,6 +36,15 @@ class artistController extends Controller
      */
     public function store(Request $request)
     {
+        // Validation
+        $request->validate([
+            'FullName' => 'required',
+            'Address' => 'required',
+            'PhoneNo' => 'required',
+            'email' =>'required',
+            'Artist_Description' => 'required',
+        ]);
+
         $artist = new artist();
         $artist->FullName = $request->FullName;
         $artist->Address = $request->Address;

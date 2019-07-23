@@ -22,7 +22,7 @@ class WelcomeController extends Controller
     {
         $Review = Reviews::all()->take(3);
         $Tattoo = Tattoo::where('Quantity' ,'>','0')->take(4)->get();
-        $artist = artist::all()->take(3);
+        $artist = artist::all()->take(4);
         return view('welcome',compact('Review','Tattoo','artist'));
     }
 

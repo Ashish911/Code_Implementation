@@ -1,5 +1,7 @@
 @extends('layouts.Pagelayout')
 
+@section('activeT','active')
+
 <style>
     .banner {
         height: 380px;
@@ -40,14 +42,7 @@
                     <!-- Title -->
                     <h4 class="card-title"><strong>{{$tattoo->Tattoo_Name}}</strong></h4>
                     <!-- Text -->
-                    <div class="row">
-                        <div class="col-9">
-                            <p class="card-text text-body">{{$tattoo->Tattoo_Detail}}</p>
-                        </div>
-                        <div class="col-3">
-                            <p class="card-text text-body text-right">${{$tattoo->Price}}</p>
-                        </div>
-                    </div>
+                    <p class="card-text text-body text-right">${{$tattoo->Price}}</p>
 
                     <!-- Button -->
                     <a class="btn btn-outline-info" href="{{route('Buy.edit',['id'=>$tattoo->id])}}"><i class="fa fa-shopping-cart"></i> Buy Now</a>

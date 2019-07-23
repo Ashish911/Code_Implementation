@@ -17,6 +17,8 @@
 
 </style>
 
+@section('activeAr','active')
+
 @section('content')
 <div class="banner">
     <div class="text-center mt-5 pt-5">
@@ -27,7 +29,7 @@
 <div class="container">
     <div class="row">
 @foreach($artist as $artists)
-            <div class="col-lg-4 col-md-4 pb-3 mb-4 ">
+            <div class="col-lg-3 col-md-4 pb-3 mb-4 ">
                 <div class="card">
 
                     <!-- Card image -->
