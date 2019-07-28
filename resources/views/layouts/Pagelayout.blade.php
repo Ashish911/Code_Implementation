@@ -155,7 +155,7 @@
             <div class="col-md-3 mx-auto">
                 <h5 class="font-weight-bold text-uppercase ml-3 mt-3 mb-4">Contact</h5>
                 <ul class="list-unstyled">
-                    <p><i class="fa fa-home mr-3"></i>Lulworth, LC 10012, UK</p>
+                    <p><i class="fa fa-home mr-3"></i>RTS, RTS 10012, UK</p>
                     <p><i class="fa fa-envelope mr-3"></i>RTS@gmail.com</p>
                     <p><i class="fa fa-phone mr-3"></i> + 44 234 567 88</p>
                 </ul>
