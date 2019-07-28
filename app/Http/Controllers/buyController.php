@@ -44,10 +44,7 @@ class buyController extends Controller
         $Buy->Contact = $request->Contact;
         $Buy->Quantity = $request->quantity;
         $Buy->Price = $request->Price;
-        $pri = $request->Price;
-        $qty = $request->quantity;
-        $total = $pri * $qty;
-        $Buy->Total = $total;
+        $Buy->Total = $request->Total;
         $Buy->TattooId = $request->id;
         $Buy->UserId = $request->user()->id;
         $stock = Tattoo::where('id', $Buy->TattooId)->first()->Quantity;

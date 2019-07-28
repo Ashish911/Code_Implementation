@@ -52,8 +52,11 @@
                             </div>
                         </div>
                         <!-- Button -->
+                        @guest
+                            <a class="btn btn-outline-dark" href="{{route('Login')}}">Login Now</a>
+                        @else
                         <a class="btn btn-outline-info" href="{{route('ProductBuy.edit',['id'=>$product->id])}}"> Buy Now</a>
-
+                        @endguest
                     </div>
 
                 </div>

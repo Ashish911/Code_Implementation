@@ -30,7 +30,7 @@
         }
 
         #TestimonialsI{
-            background: url('assets/images/Tattoo1.jpg') center center no-repeat;
+            background: url('assets/images/Skull2.jpg') center center no-repeat;
             background-size: cover;
             background-attachment: fixed;
         }

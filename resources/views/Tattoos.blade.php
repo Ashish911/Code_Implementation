@@ -45,8 +45,11 @@
                     <p class="card-text text-body text-right">${{$tattoo->Price}}</p>
 
                     <!-- Button -->
-                    <a class="btn btn-outline-info" href="{{route('Buy.edit',['id'=>$tattoo->id])}}"><i class="fa fa-shopping-cart"></i> Buy Now</a>
-
+                    @guest
+                        <a class="btn btn-outline-dark" href="{{route('Login')}}">Login Now</a>
+                    @else
+                        <a class="btn btn-outline-info" href="{{route('Buy.edit',['id'=>$tattoo->id])}}"><i class="fa fa-shopping-cart"></i> Buy Now</a>
+                    @endguest
                 </div>
 
             </div>

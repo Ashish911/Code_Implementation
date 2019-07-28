@@ -44,10 +44,7 @@ class BuyProductsController extends Controller
         $BuyProduct->Contact = $request->Contact;
         $BuyProduct->Quantity = $request->quantity;
         $BuyProduct->Price = $request->Price;
-        $pri = $request->Price;
-        $qty = $request->quantity;
-        $total = $pri * $qty;
-        $BuyProduct->Total = $total;
+        $BuyProduct->Total = $request->Total;
         $BuyProduct->ProductId = $request->id;
         $BuyProduct->UserId = $request->user()->id;
         $stock = products::where('id', $BuyProduct->ProductId)->first()->Quantity;

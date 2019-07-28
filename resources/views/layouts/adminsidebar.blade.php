@@ -15,7 +15,9 @@
     <script src="https://kit.fontawesome.com/5b14d241b3.js"></script>
 
 </head>
-<body>
+<body onload="myFunction()">
+
+<div id="loading"></div>
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
     <a class="navbar-brand mr-1" href="{{route('AdminDashboard')}}">Royal Tattoo Service</a>
@@ -45,27 +47,32 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ route('AdminViewUsers') }}">
+                <i class="fa fa-fw fa-users"></i>
                 <span>View Users</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ route('AdminViewArtists') }}">
+                <i class="fa fa-fw fa-users"></i>
                 <span>View Artists</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('AdminViewTattoos')}}">
-                <i class="fas fa-fw fa-paint-brush"></i>
+                <i class="fa fa-fw fa-paint-brush"></i>
                 <span>View Tattoos</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('AdminViewCategories')}}">
+                <i class="fa fa-fw fa-tags"></i>
                 <span>View Categories</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('AdminViewProducts')}}">
+                <i class="fa fa-fw fa-shopping-cart"></i>
                 <span>View Products</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('AdminViewReservations')}}">
+                <i class="fa fa-fw fa-book-open"></i>
                 <span>View Artist Reservations</span></a>
         </li>
         <li class="nav-item">
@@ -85,15 +92,17 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('ViewReview')}}">
+                <i class="fas fa-fw fa-eye"></i>
                 <span>View Reviews</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('AdminViewNewsletter')}}">
+                <i class="fas fa-fw fa-eye"></i>
                 <span>View NewsletterInfo</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('AdminViewContactUs')}}">
-                <i class="fas fa-fw fa-paint-brush"></i>
+                <i class="fas fa-fw fa-eye"></i>
                 <span>View ContactUsInfo </span></a>
         </li>
         <li class="nav-item">
@@ -110,6 +119,14 @@
     <div class="container-fluid">  @yield('content') </div>
 
 </div>
+
+<script>
+    var preloader = document.getElementById("loading");
+
+    function myFunction(){
+        preloader.style.display = 'none';
+    };
+</script>
 
 <!-- Bootstrap core JavaScript-->
 <script src="{{asset('js/jquery.min.js')}}"></script>

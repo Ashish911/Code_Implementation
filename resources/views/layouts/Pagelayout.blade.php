@@ -54,7 +54,10 @@
         }
     </style>
 </head>
-<body>
+<body onload="myFunction()">
+
+<div id="loading"></div>
+
 <div class="mynav">
     <nav class="navbar navbar-expand-lg navbar-dark ">
         <a class="navbar-brand" href="{{route('welcome')}}">Royal Tattoo Service</a>
@@ -178,6 +181,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('js/slick.min.js')}}"></script>
+<script>
+    var preloader = document.getElementById("loading");
+
+    function myFunction(){
+        preloader.style.display = 'none';
+    };
+</script>
+
 <script type="text/javascript">
     $(document).ready(function(){
         $('.thing').slick({
@@ -187,6 +198,17 @@
             autoplaySpeed:1000
         });
     });
+</script>
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/5d0fc5f936eab9721118d3a8/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
 </script>
 </body>
 </html>

@@ -45,8 +45,11 @@
                         <p class="card-text text-body">{{$artists->Artist_Description}}</p>
 
                         <!-- Button -->
+                        @guest
+                            <a class="btn btn-outline-dark" href="{{route('Login')}}">Login Now</a>
+                        @else
                         <a class="btn btn-outline-info" href="{{route('Booking.edit',['id'=>$artists->id])}}"> Book Now</a>
-
+                        @endguest
                     </div>
 
                 </div>
