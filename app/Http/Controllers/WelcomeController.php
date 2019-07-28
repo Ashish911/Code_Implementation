@@ -111,7 +111,7 @@ class WelcomeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $ContactUs = new ContactUs();
+
     }
 
     /**

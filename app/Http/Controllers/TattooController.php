@@ -52,12 +52,12 @@ class TattooController extends Controller
         $Tattoo->Quantity = $request->Tattoo_Quantity;
         $Tattoo->User_Id = $request->user()->id;
 
-        // $image = $request->image;
-        // $image_new_name = time().$image->getClientOriginalName();
-        // $image->move('Uploads/Tattoos',$image_new_name);
-        // $img = 'Uploads/Tattoos/'.$image_new_name;
+        $image = $request->image;
+        $image_new_name = time().$image->getClientOriginalName();
+        $image->move('Uploads/Tattoos',$image_new_name);
+        $img = 'Uploads/Tattoos/'.$image_new_name;
 
-        // $Tattoo->Tattoo_Image = $img;
+        $Tattoo->Tattoo_Image = $img;
         $Tattoo->save();
         return redirect()->route('AddTattoos.index');
     }
