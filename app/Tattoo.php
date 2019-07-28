@@ -16,4 +16,9 @@ class Tattoo extends Model
     public  function buy(){
         return $this->belongsTo('App\buy','id');
     }
+
+    public function tattoo_reviews()
+    {
+        return $this->hasMany(tattooreviews::class);
+    }
 }

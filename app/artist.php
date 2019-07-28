@@ -11,4 +11,9 @@ class artist extends Model
     public function Booking(){
         return $this->belongsToMany('App\Booking');
     }
+
+    public function artist_reviews()
+    {
+        return $this->hasMany(artistreviews::class);
+    }
 }

@@ -61,6 +61,20 @@ class User extends Authenticatable
         return $this->hasMany(Reviews::class);
     }
 
+    public function tattoo_reviews()
+    {
+        return $this->hasMany(tattooreviews::class);
+    }
+
+    public function product_reviews()
+    {
+        return $this->hasMany(productreviews::class);
+    }
+
+    public function artist_reviews()
+    {
+        return $this->hasMany(artistreviews::class);
+    }
 
     public  function  Tattoo()
     {
