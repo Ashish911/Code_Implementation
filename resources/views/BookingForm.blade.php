@@ -62,6 +62,8 @@
                                             @else
                                                 <option value="{{$item->Day}}">{{$item->Day}}</option>
                                             @endif
+                                        @elseif($artist->id !== $item->ArtistId)
+                                        <option>No Booking Available</option>
                                         @endif
                                     @endforeach
                                 </select>
